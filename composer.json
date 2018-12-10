@@ -1,0 +1,11 @@
+{
+    "name": "skywestairlines/skywest-modules",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Hilkiah Makemo",
+            "email": "hilkiah.makemo@skywest.com"
+        }
+    ],
+    "require": {}
+}

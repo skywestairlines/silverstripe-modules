@@ -9,22 +9,22 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
 use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
 
 class Footsy extends DataObject {
-	static $db = array(
+	private static $db = array(
 		'Title' => 'Varchar(25)',
 		'SortOrder' => 'Int(25)'
 	);
 	
-	static $has_many = array(
+	private static $has_many = array(
 		'IntLinks' => 'IntLink',
 		'ExtLinks' => 'ExtLink'
 	);
 	
-	static $singular_name = 'Footsy';
-	static $plural_name	  = 'Footsies';
+	private static $singular_name = 'Footsy';
+	private static $plural_name	  = 'Footsies';
 	
-	static $default_sort = 'SortOrder ASC';
+	private static $default_sort = 'SortOrder ASC';
 	
-	static $summary_fields = array(
+	private static $summary_fields = array(
 		'Title' => 'Title'
 	);
 	

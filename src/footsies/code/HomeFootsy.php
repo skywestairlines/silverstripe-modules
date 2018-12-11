@@ -1,4 +1,8 @@
 <?php
+
+use SilverStripe\ORM\DataObject;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Forms\TreeDropdownField;
 /*
 	this will be a tab on the home page
 	can add pages that will be the footer, can order them however you want

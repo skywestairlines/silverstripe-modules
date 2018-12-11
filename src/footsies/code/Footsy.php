@@ -1,4 +1,15 @@
 <?php
+
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Security\Permission;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
+use UndefinedOffset\SortableGridField\Forms\GridFieldSortableRows;
+
 class Footsy extends DataObject {
 	static $db = array(
 		'Title' => 'Varchar(25)',

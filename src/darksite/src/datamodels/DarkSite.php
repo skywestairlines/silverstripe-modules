@@ -1,4 +1,13 @@
 <?php
+
+use SilverStripe\ORM\DataObject;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Security\Member;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
+
 class DarkSite extends DataObject {
 	static $db = array(
 		'PRPlace'	 => 'Varchar(50)',
@@ -362,108 +371,5 @@ class DarkSite extends DataObject {
 // 	}
 // }
 
-class DarkSite_Release extends DataObject {
-	// pdfs for the dark site
-	static $db = array(
-		'Title' 	=> 'Varchar(80)',
-		'Excerpt' 	=> 'Text',
-		'Date' 		=> 'Date',
-		'HideInRSS' => 'Boolean',
-	);
-	
-	static $has_one = array(
-		'Parent' => 'DarkSite',
-		'DarkRelease' => 'File',
-	);
-	
-	static $summary_fields = array(
-		'Title'				=> 'Title',
-		'Date' 				=> 'Date',
-		'DarkRelease.Title' => 'Press Release PDF'
-	);
-	
-	static $default_sort = 'Date ASC';
 
-	public function canView($member = null){
-		
-		return Member::currentUser()->inGroups(array('3','2'));
-	}
-	public function canCreate($member = null){
-		
-		return Member::currentUser()->inGroups(array('3','2'));
-	}
-	public function canEdit($member = null){
-		
-		return Member::currentUser()->inGroups(array('3','2'));
-	}
-	
-	public function getCMSFields() {
-		$a = array('pdf');
-		$uploadify = new UploadField("DarkRelease", "Press Release PDF");
-		$uploadify->setFolderName('Uploads/DarkSite/PressReleases');
-		$uploadify->setAllowedExtensions($a);
-		if(!Permission::check('ADMIN')) {
-			//$uploadify->removeFolderSelection();
-		}
-		$datefield = new DateField('Date', 'Press Release Date');
-		$datefield->setConfig('showcalendar', true);
-		$datefield->setConfig('showdropdown', true);
-		$datefield->setConfig('dateformat', 'MM/dd/YYYY');
-		
-		$f = new FieldList(
-			$datefield,
-			TextField::create('Title'),
-			//new TextareaField('Excerpt', 'Excerpt'),
-			$uploadify,
-			CheckboxField::create('HideInRSS')->setTitle('Hide Press Release from RSS')
-		);
-		return $f;
-	}
-}
 
-class DarkSite_Resources extends DataObject {
-	// pages that can be accessible during the dark site - must be refered from dark site otherwise will be redirected back to dark site
-	static $db = array(
-		'Title' => 'Varchar(80)'
-	);
-	
-	static $has_one = array(
-		'DarkResource' => 'File',
-		'Parent' => 'DarkSite'
-		/*	not linking to pages anymore
-		'PageLink' => 'SiteTree'*/
-	);
-	
-	static $summary_fields =array(
-		'Title' => 'Title',
-		'DarkResource.Name' => 'FileName'
-		/*'PageLink.Title' => 'Title',
-		'PageLink.URLSegment' => 'Link'*/
-	);
-	public function canView($member = null){
-		
-		return Member::currentUser()->inGroups(array('3','2'));
-	}
-	public function canCreate($member = null){
-		
-		return Member::currentUser()->inGroups(array('3','2'));
-	}
-	public function canEdit($member = null){
-		
-		return Member::currentUser()->inGroups(array('3','2'));
-	}
-	
-	public function getCMSFields() {
-		$a = array('pdf');
-		$upload = new UploadField('DarkResource', 'Resource PDF File');
-		$upload->setFolderName('Uploads/DarkSite/Resources');
-		$upload->setAllowedExtensions($a);
-		$f = new FieldList(
-			$title = TextField::create('Title'),
-			$upload
-			//$dropdown = new SimpleTreeDropdownField('PageLinkID', 'Page Link', 'SiteTree')
-		);
-		//$dropdown->setEmptyString('Select One...');
-		return $f;
-	}
-}

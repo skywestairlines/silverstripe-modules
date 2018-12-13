@@ -1,11 +1,5 @@
 <?php
 
-use SilverStripe\ORM\DataObject;
-use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextField;
-use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Security\Permission;
-
 
 class ExtLink extends DataObject {
 	static $db = array(

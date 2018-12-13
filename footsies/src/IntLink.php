@@ -1,12 +1,5 @@
 <?php
 
-use SilverStripe\ORM\DataObject;
-use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextField;
-use SilverStripe\CMS\Model\SiteTree;
-use SilverStripe\Security\Permission;
-use SilverStripe\AssetAdmin\Forms\UploadField;
-
 class IntLink extends DataObject {
 	static $db = array(
 		'Title' => 'Varchar(50)',

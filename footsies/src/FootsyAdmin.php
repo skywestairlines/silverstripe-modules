@@ -1,6 +1,4 @@
 <?php
-
-use SilverStripe\Admin\ModelAdmin;
 /*
 	This will be a new tab only viewable by admins
 	

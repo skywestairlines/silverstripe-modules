@@ -1,0 +1,14 @@
+{
+    "name": "skywest/ss-modules",
+    "type": "library",
+    "authors": [{
+        "name": "Hilkiah Makemo",
+        "email": "hilkiah.makemo@skywest.com"
+    }],
+    "require": {
+        "symfony/console": "^4.2"
+    },
+    "autoload": {
+        "classmap": ["footsies/code/"]
+    }
+}

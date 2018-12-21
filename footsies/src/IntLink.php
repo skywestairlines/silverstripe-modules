@@ -34,7 +34,7 @@ class IntLink extends DataObject {
 	public function getCMSFields() {
 		$f = new FieldList();
 
-		$fLink = new TreeDropdownField('LinkID', 'Link to Page', 'SiteTree');
+		$fLink = new TreeDropdownField('LinkID', 'Link to Page', SiteTree::class);
         //$fLink->setEmptyString('Select One...');
 
         $icon = new UploadField('icon');

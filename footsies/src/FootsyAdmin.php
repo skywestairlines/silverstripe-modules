@@ -11,15 +11,15 @@ use SilverStripe\Admin\ModelAdmin;
 	
 */
 class FootsyAdmin extends ModelAdmin {
-	public static $managed_models = array(
+	private static $managed_models = array(
 		'Footsy',
 		'HomeFootsy'
 	);
 	
-	static $url_segment = 'footsies';
-	static $menu_title = 'Footsies';
+	private static $url_segment = 'footsies';
+	private static $menu_title = 'Footsies';
 	
-	static $set_page_length = 100;
+	private static $set_page_length = 100;
 	
 	var $showImportForm = false;
 }

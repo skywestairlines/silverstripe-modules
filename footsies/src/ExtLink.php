@@ -8,23 +8,23 @@ use SilverStripe\Security\Permission;
 
 
 class ExtLink extends DataObject {
-	static $db = array(
+	private static $db = array(
 		'Title' => 'Varchar(50)',
 		'customLink' => 'Varchar(255)',
 		'newWindow'  => 'Boolean'
 	);
 	
-	static $has_one = array(
+	private static $has_one = array(
 		'icon' => 'BetterImage',
 		'Footsy' => 'Footsy'
 	);
 	
-	static $singular_name = 'ExtLink';
-	static $plural_name	  = 'ExtLinks';
+	private static $singular_name = 'ExtLink';
+	private static $plural_name	  = 'ExtLinks';
 	
-	//static $default_sort = 'SortOrder ASC';
+	//private static $default_sort = 'SortOrder ASC';
 	
-	static $summary_fields = array(
+	private static $summary_fields = array(
 		'Title' => 'Title',
 		'customLink' => 'Link',
 		'newWindow' => 'NewWindow'

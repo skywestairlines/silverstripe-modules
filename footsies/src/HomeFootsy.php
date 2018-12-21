@@ -8,19 +8,19 @@ use SilverStripe\Forms\TreeDropdownField;
 	can add pages that will be the footer, can order them however you want
 */
 class HomeFootsy extends DataObject {
-	static $db = array(
+	private static $db = array(
 		'LinkTitle' => 'Varchar(50)'
 	);
 	
-	static $has_one = array(
+	private static $has_one = array(
 		'Link' => 'SiteTree',
 		'HomePage' => 'HomePage'
 	);
 	
-	static $singular_name = 'HomeFootsy';
-	static $plural_name	  = 'HomeFootsies';
+	private static $singular_name = 'HomeFootsy';
+	private static $plural_name	  = 'HomeFootsies';
 	
-	static $summary_fields = array(
+	private static $summary_fields = array(
 		'LinkTitle' => 'LinkTitle',
 		'Link.Title' => 'Link'
 	);

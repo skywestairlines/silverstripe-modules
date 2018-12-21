@@ -8,28 +8,28 @@ use SilverStripe\Security\Permission;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
 class IntLink extends DataObject {
-	static $db = array(
+	private static $db = array(
 		'Title' => 'Varchar(50)',
 		'SortOrder' => 'Int'
 	);
 
-	static $has_one = array(
+	private static $has_one = array(
 		'icon' => 'BetterImage',
 		'Link' => 'SiteTree',
 		'Footsy' => 'Footsy'
 	);
 
-	static $singular_name = 'IntLink';
-	static $plural_name	  = 'IntLinks';
+	private static $singular_name = 'IntLink';
+	private static $plural_name	  = 'IntLinks';
 
-	//static $default_sort = 'SortOrder ASC';
+	//private static $default_sort = 'SortOrder ASC';
 
-	static $summary_fields = array(
+	private static $summary_fields = array(
 		'Title' => 'Title',
 		'Link.Title' => 'Link',
 		//'icon.CMSThumbnail.Tag' => 'Icon'
 	);
-	static $default_sort = 'SortOrder ASC';
+	private static $default_sort = 'SortOrder ASC';
 
 	public function getCMSFields() {
 		$f = new FieldList();

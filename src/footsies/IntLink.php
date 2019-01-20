@@ -1,5 +1,7 @@
 <?php
 
+namespace SkyWest\SS_Modules\Footsies;
+
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
@@ -7,7 +9,10 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Security\Permission;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
-class IntLink extends DataObject {
+class IntLink extends DataObject
+{
+    private static $table_name = "IntLink";
+
 	private static $db = array(
 		'Title' => 'Varchar(50)',
 		'SortOrder' => 'Int'

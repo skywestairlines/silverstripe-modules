@@ -7,6 +7,8 @@
     }],
     "require": {},
     "autoload": {
-        "classmap": ["footsies/src/"]
+        "psr-4": {
+            "SkyWest\\SS_Modules\\Footsies": "src/footsies/"
+        }
     }
 }

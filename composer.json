@@ -8,7 +8,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "SkyWest\\SS_Modules\\Footsies": "src/footsies/"
+            "SkyWest\\SS_Modules\\Footsies\\": "src/footsies/"
         }
     }
 }

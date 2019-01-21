@@ -11,7 +11,7 @@ use SilverStripe\Security\Permission;
 
 class ExtLink extends DataObject
 {
-    private static $table_name = "IntLink";
+    private static $table_name = "ExtLink";
 
 	private static $db = array(
 		'Title' => 'Varchar(50)',
